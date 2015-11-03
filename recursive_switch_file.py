@@ -60,7 +60,7 @@ class RecursiveSwitchFileCommand(sublime_plugin.WindowCommand):
 
         new_path = find_in_current_dir(base, search_extensions)
 
-        if not new_path:
+        if not new_path and special_dirs:
             new_path = find_in_special_dirs(base, search_extensions, special_dirs)
 
         if new_path and os.path.exists(new_path):
